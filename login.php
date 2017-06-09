@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 
 <?php
 
@@ -15,7 +17,7 @@ $result = mysqli_query($conn, $sql);
 if(!$row = mysqli_fetch_assoc($result)) {
     echo "Your username or password is incorrect";
 } else{
-    echo "You are logged in";
+    $_SESSION['id'] = $row['id'];
 }
 
 
@@ -27,6 +29,19 @@ header("Location: index.php");
 
  
 ?>
+
+<html>
+<head>
+    
+    </head>
+<body>
+    <h1>this is where the logged in content would go</h1>
+    
+    </body>
+
+</html>
+
+
 
 
 

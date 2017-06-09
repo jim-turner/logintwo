@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <html>
 <h1>You are logged in</h1>
 </html>

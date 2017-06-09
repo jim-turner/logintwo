@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -19,6 +24,13 @@
     
     </form>
     
+    <?php
+    if (isset($_SESSION['id'])){
+        echo $_SESSION['id'];
+    }  
+   
+    ?>
+    
   <br><br><br>
     
 <form action="signup.php" method="POST">
@@ -27,6 +39,12 @@
     <input type="text" name="uid" placeholder="Username"><br>
     <input type="password" name="pwd" placeholder="Password"><br>
     <button type="submit">Sign Up</button>
+    
+    </form>
+    <br><br><br>
+    
+    <form action="logout.php">
+    <button>Log Out</button>
     
     </form>
 </body>
